@@ -15,10 +15,12 @@ export function useJob(id) {
     return {job: data?.job, loading, error: Boolean(error)}
 }
 
-export function useJobs() {
+export function useJobs(limit, offset) {
     const { data, loading, error} = useQuery(jobsQuery, {
-      fetchPolicy: 'network-only'
+      fetchPolicy: 'network-only',
+      variables: {limit, offset},
     })
+    console.log(error)
     return {jobs: data?.jobs, loading, error: Boolean(error)}
 }
 
