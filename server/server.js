@@ -9,7 +9,6 @@ import { getUser } from './db/users.js';
 
 const typeDefs = await readFile('./schema.graphql', 'utf-8')
 
-
 const PORT = 9000;
 
 const app = express();
